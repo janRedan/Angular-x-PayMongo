@@ -1,0 +1,13 @@
+<p>
+  trial works!
+</p>
+<button (click)="createPaymentMethod()">Create Payment Method</button>
+<button (click)="createPaymentIntent()">Create Payment Intent</button>
+<pre> {{ paymentMethod }}</pre>
+<pre> {{ paymentIntent }}</pre>
+
+<div>
+  <input  [(ngModel)]="methodId" type="text" placeholder="MethodId"/>
+  <input [(ngModel)]="intentId" type="text" placeholder="IntentId" />
+  <button (click)="attach()">Attach method+payment</button>
+</div>
