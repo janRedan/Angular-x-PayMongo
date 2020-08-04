@@ -13,6 +13,7 @@ constructor(private http:HttpClient) { }
   private clientSecret:string;
   private httpOptions:any;
   private apiUrl = 'https://api.paymongo.com/v1/';
+
   setClientSecret(secret:string){
     this.clientSecret = secret;
     this.httpOptions = {
@@ -61,6 +62,25 @@ constructor(private http:HttpClient) { }
       })
      )
    }
+   
+   
+   BayadBills(): Observable<any> {
 
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'X-MECOM-PARTNER-SECRET': "fTiQ3c60X3ej3p58830OL1Peu8wKnHleNqF6maQJyGNEYkyBEuZ0N6JCtcU6Jtpmjqz1CQttpREzc4jcxu1rhjF3TTWwADRZfCItnL1KoqFHwT8hlGiqrR4uCCQpqO7L"
+      })
+    };
+    debugger;
+    return this.http.get("https://uat-partners2.multipay.ph/api/v3/billers").pipe(
+       map((data: any) => {
+        debugger;
+         return data;
+       }),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(error);
+      })
+     )
+   }
 
 }

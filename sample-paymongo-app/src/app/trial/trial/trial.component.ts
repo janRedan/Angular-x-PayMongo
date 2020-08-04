@@ -63,7 +63,7 @@ export class TrialComponent implements OnInit {
     this.trialService.createPaymentMethod(this.dataPayMethod).subscribe((success)=>{
       this.methodId = success.data.id;
      
-      this.paymentMethod = JSON.stringify(success);
+      this.paymentMethod = success;
     },
     (err)=>{
       debugger;
@@ -93,5 +93,8 @@ attach(){
 
 }
 
+bayadbill(){
+  this.trialService.BayadBills().subscribe();
+}
 
 }

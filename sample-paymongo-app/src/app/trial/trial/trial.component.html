@@ -3,11 +3,16 @@
 </p>
 <button (click)="createPaymentMethod()">Create Payment Method</button>
 <button (click)="createPaymentIntent()">Create Payment Intent</button>
-<pre> {{ paymentMethod }}</pre>
+<pre> {{ paymentMethod | json }}</pre>
 <pre> {{ paymentIntent }}</pre>
 
 <div>
   <input  [(ngModel)]="methodId" type="text" placeholder="MethodId"/>
   <input [(ngModel)]="intentId" type="text" placeholder="IntentId" />
   <button (click)="attach()">Attach method+payment</button>
-</div>
+</div>  
+
+<div>
+ 
+  <button (click)="bayadbill()">BayadBill</button>
+</div>  
