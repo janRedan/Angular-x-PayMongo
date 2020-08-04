@@ -93,8 +93,6 @@ attach(){
 
 }
 
-bayadbill(){
-  this.trialService.BayadBills().subscribe();
-}
+
 
 }
